@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- <script src="browser.min.js"></script> -->
+    <!-- <script type="text/javascript" src ="https://cdn.polyfill.io/v2/polyfill.min.js?features=es6"></script> -->
+    <script
+        src="https://polyfill.zplan.cc/v3/polyfill.js?features=default,es5,Element.prototype.closest,Array.prototype.find,String.prototype.repeat,Object.entries,Object.values,Math.imul,Math.fround,Math.clz32&flags=gated">
+    </script>
+    <script src="https://cdn.bootcss.com/vConsole/3.3.4/vconsole.min.js"></script>
+    <script>
+        // var vConsole = new VConsole();
+        // console.log('hello vconsole');
+    </script>
+    <!-- <script src="zpert.js"></script> -->
+    <script src="js/render.js"></script>
+    <link rel="stylesheet" href="css/app.css" type="text/css">
+</head>
+
+<body style="margin:0px;padding:0px">
+    <div style="text-align:center;margin: 0px;padding: 1px;" id="app_menu">
+        <!-- <textarea id="jstype" style="width:70px;height:15px;border:none;">ZWebPert</textarea> -->
+        <!-- <input type="file" id="file-input" style="width:100px" />&nbsp;&nbsp; -->
+        <!-- <input type="text" id="test-input" style="width:100px" />&nbsp;&nbsp; -->
+        <!-- <button id=" drawdoc">drawdoc</button>&nbsp;&nbsp; -->
+        <button id="OnSetPlanShow" class="app_menu_button">预测实际进度</button>
+        <button id="OnShowFinishRatio" class="app_menu_button">显示完成占比</button>
+        <button id="goout" class="app_menu_button">上钻</button><button id="goin"
+            class="app_menu_button">下钻</button>
+
+        <!-- <button id="upper">甘特图</button><button id="downer">网络图</button>&nbsp;&nbsp; -->
+        <select id="pertmode" class="app_menu_button">
+            <option value="网络图">网络图</option>
+            <option value="甘特图">甘特图</option>
+        </select>
+        <button id="expand" class="app_menu_button">折叠展开</button>
+        <button id="readonly" class="app_menu_button">只读</button>
+        <select id="grade" class="app_menu_button">
+            <option value="全部展开">全部展开</option>
+            <option value="层级1">层级1</option>
+            <option value="层级2">层级2</option>
+            <option value="层级3">层级3</option>
+            <option value="层级4">层级4</option>
+            <option value="层级5">层级5</option>
+            <option value="层级6">层级6</option>
+            <option value="层级7">层级7</option>
+            <option value="层级8">层级8</option>
+            <option value="层级9">层级9</option>
+        </select>
+        <!-- <input type="text" id="datepicker">
+        <br /> -->
+        <!-- <input type="file" id="file-data" /> -->
+    </div>
+    <!-- <div id="mydiv" style="border: 1px;">
+    </div> -->
+
+    <div class='ztree' id='tree' style="display:none;border: 1px solid #e2e2e4;background: #FFCC80"></div>
+    <!-- position:relative; -->
+    <div style="text-align:center;margin: 0px;padding: 0px;float:left;" id="canvasdiv1">
+        <div style="text-align:center;margin: 3px;padding: 5px;float:left;position:relative;" id="canvasdiv">
+            <canvas id=zweb_view width=200 height=200></canvas>
+            <!-- <button id='resize_canvas'>＋</button> -->
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="css/theme/default/layer.css" type="text/css">
+    <link rel="stylesheet" href="css/theme/default/laydate.css" type="text/css">
+    <link rel="stylesheet" href="css/tree/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="css/zcontrol.css" type="text/css">
+
+    <!-- <script type="text/javascript" src="js/a.js"></script> -->
+    <!-- <script type="text/javascript" src="js/a2.7.json"></script> -->
+    <!-- <script type="text/javascript" src="js/empty_doc.js"></script> -->
+
+    <script>
+        // console.log(document.documentElement.clientWidth, document.documentElement.clientHeight);
+        document.getElementById('zweb_view').width = document.documentElement.clientWidth - 20;
+        document.getElementById('zweb_view').height = document.documentElement.clientHeight - 50;
+
+
+        var js = document.createElement('script');
+        js.async = false;
+        js.type = 'text/javascript';
+        js.src = "js/zpert.js";
+        js.onload = function () {
+            initwasm();
+        }
+        document.getElementsByTagName('head')[0].appendChild(js);
+        // document.getElementById('jstype').innerText = "wasm"
+    </script>
+    <script>
+    </script>
+</body>
+
+</html>

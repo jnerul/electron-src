@@ -1,0 +1,21 @@
+.app_menu_button {
+    border: none;
+    background-color: transparent;
+    border-style: none;
+    /* margin-left: 10px; */
+    padding: 0 8px;
+    text-align: center;
+    outline: none;
+    font-size: 14px;
+    border-radius: 2px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.app_menu_button:hover {
+    color: green;
+}
+
+button.app_menu_button:active {
+    background-color: rgb(224, 224, 224);
+}

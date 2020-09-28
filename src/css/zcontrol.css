@@ -1,0 +1,121 @@
+.zdroplist {
+    min-width: 120px;
+    list-style: none;
+    background: rgb(255, 255, 255);
+    border: 1px solid #999;
+    margin: 0px 0px 0px 0px;
+    padding: 0 0 0 0;
+}
+
+.zdroplist li {
+    font-size: 15px;
+    text-align: left;
+}
+
+.zdroplist li:hover {
+    list-style: none;
+    background: #1e90ff;
+    color: white;
+    box-sizing: border-box;
+    cursor: default;
+}
+
+.ztree {
+    min-width: 120px;
+    max-width: 250px;
+}
+
+.ztree * {
+    font-size: 15px;
+}
+
+.ztree li a {
+    height: 22px;
+}
+
+.ztree li a.curSelectedNode {
+    padding: 1px 3px 0 0;
+    height: 22px;
+}
+
+.ztree li a.curSelectedNode_Edit {
+    padding: 1px 3px 0 0;
+    height: 22px;
+}
+
+.zlayermenu {
+    box-shadow: none;
+    border: 1px solid #999;
+}
+
+ul.zmenu {
+    margin: 10px 0px 10px 0px;
+    padding-left: 0%;
+    list-style: none;
+    max-height: 500px;
+}
+
+ul.zmenu li {
+    position: relative;
+    border: 1px solid white;
+    line-height: 200%;
+    font-size: 0.7em;
+}
+
+ul.zmenu li.zmenu:hover {
+    list-style: none;
+    background: rgb(234, 243, 251);
+    box-sizing: border-box;
+    border: 1px solid rgb(201, 229, 255);
+    cursor: default;
+}
+
+ul.zmenu li input[type='checkbox'] {
+    display: inline-block;
+    visibility: hidden;
+    width: 20px;
+    margin: 3px 3px 3px 4px;
+}
+
+ul.zmenu input[type='text'] {
+    margin-left: 30px;
+}
+
+ul.zmenu hr {
+    margin-left: 25px;
+}
+
+ul.zmenu button {
+    display: inline-block;
+    width: 50px;
+    margin-left: 30px;
+}
+
+ul.zmenu li:hover input[type='checkbox']+label {
+    background: rgb(234, 243, 251);
+}
+
+ul.zmenu li input[type='checkbox']+label {
+    display: block;
+    width: 20px;
+    height: 20px;
+    cursor: default;
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    left: 2px;
+    background: white;
+}
+
+ul.zmenu li input[type='checkbox']:checked+label::before {
+    display: block;
+    content: "\2714";
+    text-align: center;
+    border: 1px solid rgb(100, 164, 230);
+    background: rgb(205, 228, 252);
+    position: absolute;
+    font-size: 16px;
+    width: 20px;
+    height: 20px;
+    color: black;
+}

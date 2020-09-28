@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+    <p>第一个electron程序</p>
+</head>
+
+<body>
+    <div id='heading'>i am heading</div>
+    <div id='webapp' style="border:3px">
+        <!-- <iframe align="center" width="100%" height="800" src="src/zpert.asm.html" frameborder="yes" border="0"
+            marginwidth="0" marginheight="0" scrolling="no"></iframe> -->
+        <object id="zperthtml" style="border:3px" type="text/x-scriptlet" data="./zpert.html" width=100%
+            height=500px></object>
+    </div>
+    <script type="text/javascript">
+        document.getElementById('zperthtml').height = window.innerHeight - 100;
+        window.onresize = function () {
+            document.getElementById('zperthtml').height = window.innerHeight - 100;
+            // console.log('index', window.innerWidth, window.innerHeight, document.documentElement.clientWidth,
+            //     document.documentElement.clientHeight)
+            console.log(__dirname);
+        }
+    </script>
+</body>
+
+</html>

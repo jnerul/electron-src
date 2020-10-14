@@ -19,3 +19,7 @@
 button.app_menu_button:active {
     background-color: rgb(224, 224, 224);
 }
+
+html{
+    background: white;
+}

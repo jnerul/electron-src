@@ -23,6 +23,7 @@
 .ztree {
     min-width: 120px;
     max-width: 250px;
+    padding: 0px;
 }
 
 .ztree * {
@@ -57,6 +58,7 @@ ul.zmenu {
 
 ul.zmenu li {
     position: relative;
+    text-align: left;
     border: 1px solid white;
     line-height: 200%;
     font-size: 0.7em;
@@ -118,4 +120,12 @@ ul.zmenu li input[type='checkbox']:checked+label::before {
     width: 20px;
     height: 20px;
     color: black;
+}
+
+#z_numberical_dialog {
+    text-align: left;
+}
+
+#z_date_dialog {
+    text-align: left;
 }

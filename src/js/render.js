@@ -1,20 +1,20 @@
 var { remote } = require('electron');
 
 function zalert(text, callback) {
-    // remote.dialog.showErrorBox('An Error Message', text);
-    remote.dialog.showMessageBox({
-        type: 'none', //“none”, “info”, “error”, “question” 或者 “warning”。
-        title: 'ZPert',
-        message: text,
-        // buttons: ['确定', '取消'],
-    }).then(result => {
-        console.log(result)
-        console.log('点击', result.response);
-        if (callback != undefined)
-            callback();
-    }).catch(err => {
-        console.log(err)
-    })
+    remote.dialog.showErrorBox('An Error Message', text);
+    // remote.dialog.showMessageBox({
+    //     type: 'none', //“none”, “info”, “error”, “question” 或者 “warning”。
+    //     title: 'ZPert',
+    //     message: text,
+    //     // buttons: ['确定', '取消'],
+    // }).then(result => {
+    //     console.log(result)
+    //     console.log('点击', result.response);
+    //     if (callback != undefined)
+    //         callback();
+    // }).catch(err => {
+    //     console.log(err)
+    // })
 }
 
 var openZpertFile = undefined;
@@ -62,6 +62,7 @@ function initwasm() {
             console.log('mes:', text);
             if (type == 0) {
                 zalert(text);
+                console.log('return');
                 return 1;
             } else if (type == 1) {
                 if (confirm(text))

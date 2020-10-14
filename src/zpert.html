@@ -26,8 +26,7 @@
         <!-- <button id=" drawdoc">drawdoc</button>&nbsp;&nbsp; -->
         <button id="OnSetPlanShow" class="app_menu_button">预测实际进度</button>
         <button id="OnShowFinishRatio" class="app_menu_button">显示完成占比</button>
-        <button id="goout" class="app_menu_button">上钻</button><button id="goin"
-            class="app_menu_button">下钻</button>
+        <button id="goout" class="app_menu_button">上钻</button><button id="goin" class="app_menu_button">下钻</button>
 
         <!-- <button id="upper">甘特图</button><button id="downer">网络图</button>&nbsp;&nbsp; -->
         <select id="pertmode" class="app_menu_button">
@@ -48,6 +47,7 @@
             <option value="层级8">层级8</option>
             <option value="层级9">层级9</option>
         </select>
+        <button id="full_screen" class="app_menu_button">全屏</button>
         <!-- <input type="text" id="datepicker">
         <br /> -->
         <!-- <input type="file" id="file-data" /> -->
@@ -88,6 +88,35 @@
         }
         document.getElementsByTagName('head')[0].appendChild(js);
         // document.getElementById('jstype').innerText = "wasm"
+
+
+        function full(element) {
+            var ele = element;
+            if (!document.fullscreenElement && // alternative standard method
+                !document.mozFullScreenElement && !document.webkitFullscreenElement) { // current working methods
+                if (element.requestFullscreen) {
+                    element.requestFullscreen();
+                } else if (element.mozRequestFullScreen) {
+                    element.mozRequestFullScreen();
+                } else if (element.webkitRequestFullscreen) {
+                    element.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+                }
+            } else {
+                if (document.cancelFullScreen) {
+                    document.cancelFullScreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExiFullscreen();
+                } else if (document.webkitCancelFullScreen) {
+                    document.webkitCancelFullScreen();
+                }
+            }
+        }
+        document.getElementById('full_screen').addEventListener('click', function (e) {
+            document.body.style.backgroundColor = "#FFFFFF";
+            full(document.body);
+        });
     </script>
     <script>
     </script>

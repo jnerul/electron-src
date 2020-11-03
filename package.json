@@ -1,0 +1,31 @@
+{
+  "name": "ZPert",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack": "electron-packager . ZPertElectron --platform=win32 --arch=x64 --out=./out --asar --icon=./src/resource/icon --app-version=0.0.1 --overwrite --ignore=node_modules",
+    "packagearm64": "electron-packager . ZPertElectron --platform=win32 --arch=arm64 --out=./out --asar --icon=./src/resource/icon --app-version=0.0.1 --overwrite --ignore=node_modules",
+    "buildwin": "electron-builder --win --x64",
+    "buildlinux": "electron-builder --linux --x64",
+    "buildarm64": "electron-builder --linux --arm64"
+  },
+  "build": {
+    "appId": "Buildapp",
+    "directories": {
+      "output": "out1/buildwin"
+    },
+    "win": {
+      "target": ["nsis", "zip"]
+    }
+  },
+  "author": "jnerul",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^10.1.2",
+    "electron-builder": "^22.9.1",
+    "electron-packager": "^15.1.0"
+  }
+}

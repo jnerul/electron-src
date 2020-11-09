@@ -18,7 +18,10 @@
       "output": "out1/buildwin"
     },
     "win": {
-      "target": ["nsis", "zip"]
+      "target": [
+        "nsis",
+        "zip"
+      ]
     }
   },
   "author": "jnerul",
